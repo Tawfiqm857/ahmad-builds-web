@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Heart, Users, Code } from "lucide-react";
+import ahmadCasual from "@/assets/ahmad-casual.png";
 
 const About = () => {
   return (
@@ -14,9 +15,9 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-center">
             {/* Main Bio */}
-            <div className="space-y-6">
+            <div className="lg:col-span-2 space-y-6">
               <h3 className="text-2xl font-semibold mb-4">My Story</h3>
               
               <p className="text-muted-foreground leading-relaxed">
@@ -32,11 +33,27 @@ const About = () => {
               </p>
             </div>
 
-            {/* Highlights Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="p-6 hover-lift">
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-xl">
+                  <img
+                    src={ahmadCasual}
+                    alt="Ahmad Tawfiq Muhammad"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl -z-10"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Highlights Grid */}
+          <div className="mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Card className="p-6 hover-lift border-primary/20">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <div className="p-3 rounded-full bg-accent text-accent-foreground">
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground">
                     <GraduationCap size={24} />
                   </div>
                   <h4 className="font-semibold">Education</h4>
@@ -44,9 +61,9 @@ const About = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 hover-lift">
+              <Card className="p-6 hover-lift border-primary/20">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <div className="p-3 rounded-full bg-accent text-accent-foreground">
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground">
                     <Code size={24} />
                   </div>
                   <h4 className="font-semibold">Focus</h4>
@@ -54,9 +71,9 @@ const About = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 hover-lift">
+              <Card className="p-6 hover-lift border-primary/20">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <div className="p-3 rounded-full bg-accent text-accent-foreground">
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground">
                     <Users size={24} />
                   </div>
                   <h4 className="font-semibold">Community</h4>
@@ -64,9 +81,9 @@ const About = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 hover-lift">
+              <Card className="p-6 hover-lift border-primary/20">
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <div className="p-3 rounded-full bg-accent text-accent-foreground">
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground">
                     <Heart size={24} />
                   </div>
                   <h4 className="font-semibold">Mission</h4>
