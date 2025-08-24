@@ -61,13 +61,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 section-alt">
+    <section id="projects" className="py-20 section-projects">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4 reveal-text">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal-text delay-1">
               A showcase of my work in frontend development and community-focused applications
             </p>
           </div>
@@ -77,8 +77,8 @@ const Projects = () => {
             {projects.map((project, index) => (
               <Card 
                 key={project.title} 
-                className={`overflow-hidden hover-lift group ${
-                  project.featured ? 'md:col-span-2 lg:col-span-2' : ''
+                className={`overflow-hidden hover-lift group reveal-text delay-${Math.min(index + 2, 6)} bg-gradient-to-br from-card to-accent/5 border-0 shadow-colored hover:shadow-strong ${
+                  project.featured ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-card to-primary/10' : ''
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
@@ -103,10 +103,15 @@ const Projects = () => {
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech, techIndex) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
+                        className={`px-3 py-1 text-white text-sm rounded-full shadow-soft ${
+                          techIndex % 4 === 0 ? 'bg-gradient-to-r from-primary to-primary-light' :
+                          techIndex % 4 === 1 ? 'bg-gradient-to-r from-secondary to-accent' :
+                          techIndex % 4 === 2 ? 'bg-gradient-to-r from-accent to-success' :
+                          'bg-gradient-to-r from-success to-warning'
+                        }`}
                       >
                         {tech}
                       </span>
@@ -119,7 +124,7 @@ const Projects = () => {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="flex-1"
+                      className="flex-1 border-accent text-accent hover:bg-accent hover:text-white shadow-soft hover:shadow-colored"
                     >
                       <a
                         href={project.githubUrl}
@@ -133,10 +138,9 @@ const Projects = () => {
                     </Button>
                     
                     <Button
-                      variant="cta"
                       size="sm"
                       asChild
-                      className="flex-1"
+                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary shadow-soft hover:shadow-medium"
                     >
                       <a
                         href={project.liveUrl}

@@ -53,13 +53,13 @@ const TechStack = () => {
   ];
 
   return (
-    <section id="tech-stack" className="py-20">
+    <section id="tech-stack" className="py-20 section-tech">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tech Stack</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text-secondary mb-4 reveal-text">Tech Stack</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal-text delay-1">
               Technologies and tools I use to bring ideas to life
             </p>
           </div>
@@ -69,11 +69,11 @@ const TechStack = () => {
             {technologies.map((tech, index) => (
               <Card 
                 key={tech.name} 
-                className="p-6 hover-lift group cursor-pointer"
+                className={`p-6 hover-lift group cursor-pointer reveal-text delay-${Math.min(index + 2, 6)} bg-gradient-to-br from-card to-secondary/20 border-0 shadow-colored hover:shadow-strong`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex flex-col items-center text-center space-y-3">
-                  <div className="text-4xl group-hover:scale-110 transition-bounce">
+                  <div className="text-4xl group-hover:scale-110 transition-bounce p-3 rounded-lg bg-gradient-to-br from-secondary to-accent shadow-medium">
                     {tech.icon}
                   </div>
                   <h3 className="font-semibold text-lg">{tech.name}</h3>
@@ -85,7 +85,7 @@ const TechStack = () => {
 
           {/* Additional Skills */}
           <div className="mt-16 text-center">
-            <h3 className="text-xl font-semibold mb-6">Additional Skills</h3>
+            <h3 className="text-xl font-semibold gradient-text mb-6">Additional Skills</h3>
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 "Responsive Design",
@@ -96,10 +96,15 @@ const TechStack = () => {
                 "Community Building",
                 "Agile Methodology",
                 "Problem Solving"
-              ].map((skill) => (
+              ].map((skill, skillIndex) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-smooth"
+                  className={`px-4 py-2 text-white rounded-full text-sm font-medium hover:scale-105 transition-smooth shadow-soft hover:shadow-medium ${
+                    skillIndex % 4 === 0 ? 'bg-gradient-to-r from-primary to-secondary' :
+                    skillIndex % 4 === 1 ? 'bg-gradient-to-r from-secondary to-accent' :
+                    skillIndex % 4 === 2 ? 'bg-gradient-to-r from-accent to-success' :
+                    'bg-gradient-to-r from-success to-warning'
+                  }`}
                 >
                   {skill}
                 </span>

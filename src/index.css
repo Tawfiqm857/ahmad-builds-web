@@ -8,61 +8,72 @@
 
 @layer base {
   :root {
-    /* Dark blue, white, and black theme */
+    /* Modern colorful theme */
     --background: 0 0% 100%;
-    --foreground: 210 50% 12%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 50% 12%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 50% 12%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Primary - Dark navy blue */
-    --primary: 210 100% 15%;
+    /* Primary - Modern Blue */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 100% 25%;
-    --primary-dark: 210 100% 8%;
+    --primary-light: 221 83% 65%;
+    --primary-dark: 221 83% 35%;
 
-    /* Secondary - Light grays */
-    --secondary: 210 20% 95%;
-    --secondary-foreground: 210 50% 12%;
+    /* Secondary - Purple accent */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 95%;
-    --muted-foreground: 210 20% 45%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 25% 27%;
 
-    /* Accent - Pure black */
-    --accent: 210 50% 8%;
+    /* Accent - Vibrant Cyan */
+    --accent: 186 100% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 210 20% 85%;
-    --accent-dark: 210 60% 4%;
+    --accent-light: 186 100% 65%;
+    --accent-dark: 186 100% 35%;
 
-    /* Success */
-    --success: 142 70% 45%;
+    /* Success - Modern Green */
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
+
+    /* Warning - Orange */
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 15%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom portfolio colors */
-    --hero-bg: 210 100% 4%;
-    --section-bg: 210 20% 98%;
+    /* Custom modern colors */
+    --hero-bg: 221 83% 53%;
+    --section-bg: 210 40% 98%;
+    --tech-bg: 262 83% 58%;
+    --project-bg: 186 100% 50%;
+    --experience-bg: 142 76% 36%;
+    --contact-bg: 25 95% 53%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--hero-bg)) 0%, hsl(var(--background)) 100%);
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(186 100% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(186 100% 50%) 0%, hsl(142 76% 36%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 50%, hsl(186 100% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 2px 20px -5px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 15px 40px -10px hsl(var(--primary) / 0.2);
+    /* Modern shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(221 83% 53% / 0.15);
+    --shadow-medium: 0 10px 40px -5px hsl(221 83% 53% / 0.2);
+    --shadow-strong: 0 20px 60px -10px hsl(221 83% 53% / 0.25);
+    --shadow-colored: 0 8px 32px -8px hsl(262 83% 58% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,33 +97,33 @@
   }
 
   .dark {
-    --background: 210 100% 4%;
+    --background: 222 47% 11%;
     --foreground: 0 0% 100%;
 
-    --card: 210 50% 8%;
+    --card: 222 47% 15%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 210 50% 8%;
+    --popover: 222 47% 15%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 210 100% 4%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 50% 12%;
+    --secondary: 262 83% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 50% 12%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 215 25% 27%;
+    --muted-foreground: 217 10% 64%;
 
-    --accent: 0 0% 100%;
-    --accent-foreground: 210 100% 4%;
+    --accent: 186 100% 50%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 50% 15%;
-    --input: 210 50% 15%;
-    --ring: 0 0% 100%;
+    --border: 217 10% 25%;
+    --input: 217 10% 25%;
+    --ring: 221 83% 53%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -150,6 +161,22 @@
     @apply bg-section-bg;
   }
   
+  .section-tech {
+    background: linear-gradient(135deg, hsl(var(--tech-bg) / 0.1) 0%, hsl(var(--section-bg)) 100%);
+  }
+  
+  .section-projects {
+    background: linear-gradient(135deg, hsl(var(--project-bg) / 0.1) 0%, hsl(var(--section-bg)) 100%);
+  }
+  
+  .section-experience {
+    background: linear-gradient(135deg, hsl(var(--experience-bg) / 0.1) 0%, hsl(var(--section-bg)) 100%);
+  }
+  
+  .section-contact {
+    background: linear-gradient(135deg, hsl(var(--contact-bg) / 0.1) 0%, hsl(var(--section-bg)) 100%);
+  }
+  
   /* Custom shadows */
   .shadow-soft {
     box-shadow: var(--shadow-soft);
@@ -161,6 +188,10 @@
   
   .shadow-strong {
     box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-colored {
+    box-shadow: var(--shadow-colored);
   }
   
   /* Smooth transitions */
@@ -179,6 +210,20 @@
   
   /* Gradient text */
   .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .gradient-text-accent {
     background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

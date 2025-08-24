@@ -56,6 +56,10 @@ export default {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
 				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -66,6 +70,10 @@ export default {
 				},
 				'hero-bg': 'hsl(var(--hero-bg))',
 				'section-bg': 'hsl(var(--section-bg))',
+				'tech-bg': 'hsl(var(--tech-bg))',
+				'project-bg': 'hsl(var(--project-bg))',
+				'experience-bg': 'hsl(var(--experience-bg))',
+				'contact-bg': 'hsl(var(--contact-bg))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
