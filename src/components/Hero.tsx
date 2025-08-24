@@ -27,34 +27,34 @@ const Hero = () => {
             {/* Content */}
             <div className="text-center lg:text-left order-2 lg:order-1">
               {/* Location */}
-              <div className="flex items-center justify-center lg:justify-start gap-2 mb-6 text-primary-foreground/80">
+              <div className="flex items-center justify-center lg:justify-start gap-2 mb-6 text-primary-foreground/80 reveal-text">
                 <MapPin size={16} />
                 <span className="text-sm">Abuja, Nigeria</span>
               </div>
 
               {/* Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Hi, I'm{" "}
-                <span className="text-white">Ahmad Tawfiq Muhammad</span>
+                <span className="reveal-text delay-1">Hi, I'm{" "}</span>
+                <span className="text-white reveal-text delay-2">Ahmad Tawfiq Muhammad</span>
               </h1>
 
               {/* Tagline */}
-              <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
+              <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium reveal-text delay-3">
                 Frontend Developer & Tech Community Facilitator
               </p>
 
               {/* Description */}
-              <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
+              <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed reveal-text delay-4">
                 Building web solutions with a human-centered approach, combining technical expertise with a social science foundation to create meaningful digital experiences.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 reveal-text delay-5">
                 <Button 
                   variant="secondary" 
                   size="lg"
                   onClick={() => scrollToSection("projects")}
-                  className="text-base bg-white text-primary hover:bg-white/90"
+                  className="text-base bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300"
                 >
                   View My Work
                 </Button>
@@ -62,19 +62,19 @@ const Hero = () => {
                   variant="outline" 
                   size="lg"
                   onClick={() => scrollToSection("contact")}
-                  className="text-base border-white/30 text-white hover:bg-white/10"
+                  className="text-base border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
                 >
                   Get In Touch
                 </Button>
               </div>
 
               {/* Social Links */}
-              <div className="flex justify-center lg:justify-start gap-6">
+              <div className="flex justify-center lg:justify-start gap-6 reveal-text delay-5">
                 <a 
-                  href="https://github.com/ahmadtawfiq" 
+                  href="https://github.com/devByTawfiq/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-smooth backdrop-blur-sm hover:-translate-y-1"
+                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm hover:-translate-y-2 hover:scale-110"
                 >
                   <Github size={20} className="text-white" />
                 </a>
@@ -82,13 +82,13 @@ const Hero = () => {
                   href="https://linkedin.com/in/ahmadtawfiq" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-smooth backdrop-blur-sm hover:-translate-y-1"
+                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm hover:-translate-y-2 hover:scale-110"
                 >
                   <Linkedin size={20} className="text-white" />
                 </a>
                 <a 
-                  href="mailto:ahmad@example.com"
-                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-smooth backdrop-blur-sm hover:-translate-y-1"
+                  href="mailto:tawfiqm857@gmail.com"
+                  className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 backdrop-blur-sm hover:-translate-y-2 hover:scale-110"
                 >
                   <Mail size={20} className="text-white" />
                 </a>
@@ -96,16 +96,16 @@ const Hero = () => {
             </div>
 
             {/* Profile Image */}
-            <div className="order-1 lg:order-2 flex justify-center">
+            <div className="order-1 lg:order-2 flex justify-center scale-in">
               <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
                   <img
                     src={ahmadProfessional}
                     alt="Ahmad Tawfiq Muhammad - Frontend Developer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-110 transition-all duration-700"
                   />
                 </div>
-                <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl -z-10"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-3xl -z-10 animate-pulse"></div>
               </div>
             </div>
           </div>

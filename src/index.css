@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -130,7 +130,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-poppins;
     scroll-behavior: smooth;
   }
   
@@ -183,5 +183,84 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* Text reveal animations */
+  .reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal 0.8s ease-out forwards;
+  }
+  
+  .reveal-text.delay-1 { animation-delay: 0.1s; }
+  .reveal-text.delay-2 { animation-delay: 0.2s; }
+  .reveal-text.delay-3 { animation-delay: 0.3s; }
+  .reveal-text.delay-4 { animation-delay: 0.4s; }
+  .reveal-text.delay-5 { animation-delay: 0.5s; }
+  
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Typing animation */
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--primary)); }
+  }
+  
+  /* Slide in animations */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Scale in animation */
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes scaleIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }

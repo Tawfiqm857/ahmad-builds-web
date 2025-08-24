@@ -43,14 +43,20 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "ahmad.tawfiq@example.com",
-      href: "mailto:ahmad.tawfiq@example.com"
+      value: "tawfiqm857@gmail.com",
+      href: "mailto:tawfiqm857@gmail.com"
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+234 (0) 123 456 7890",
-      href: "tel:+2341234567890"
+      label: "WhatsApp & Calls",
+      value: "+234 907 093 1418",
+      href: "https://wa.me/2349070931418"
+    },
+    {
+      icon: Phone,
+      label: "Calls Only",
+      value: "+234 802 242 4769",
+      href: "tel:+2348022424769"
     },
     {
       icon: MapPin,
@@ -64,7 +70,7 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/ahmadtawfiq",
+      href: "https://github.com/devByTawfiq/",
       color: "hover:text-gray-600"
     },
     {
@@ -76,7 +82,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:ahmad.tawfiq@example.com",
+      href: "mailto:tawfiqm857@gmail.com",
       color: "hover:text-red-500"
     }
   ];
@@ -87,16 +93,16 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal-text">Get In Touch</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal-text delay-1">
               Let's discuss your project, collaborate on something amazing, or explore opportunities to work together.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="p-8">
-              <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
+            <Card className="p-8 slide-in-left hover:shadow-strong transition-all duration-300">
+              <h3 className="text-2xl font-semibold mb-6 reveal-text delay-2">Send me a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
@@ -109,7 +115,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="Your full name"
                     required
-                    className="transition-smooth"
+                    className="transition-all duration-300 focus:scale-105"
                   />
                 </div>
 
@@ -123,7 +129,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="your.email@example.com"
                     required
-                    className="transition-smooth"
+                    className="transition-all duration-300 focus:scale-105"
                   />
                 </div>
 
@@ -137,7 +143,7 @@ const Contact = () => {
                     placeholder="Tell me about your project or how we can work together..."
                     rows={6}
                     required
-                    className="transition-smooth resize-none"
+                    className="transition-all duration-300 focus:scale-105 resize-none"
                   />
                 </div>
 
@@ -146,7 +152,7 @@ const Contact = () => {
                   variant="cta"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full"
+                  className="w-full hover:scale-105 transition-all duration-300"
                 >
                   {isSubmitting ? (
                     "Sending..."
@@ -161,14 +167,14 @@ const Contact = () => {
             </Card>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 slide-in-right">
               {/* Contact Details */}
               <div>
-                <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-semibold mb-6 reveal-text delay-3">Contact Information</h3>
                 <div className="space-y-4">
-                  {contactInfo.map((info) => (
-                    <div key={info.label} className="flex items-center gap-4">
-                      <div className="p-3 rounded-lg bg-accent text-accent-foreground">
+                  {contactInfo.map((info, index) => (
+                    <div key={info.label} className={`flex items-center gap-4 reveal-text delay-${4 + index} hover:scale-105 transition-all duration-300`}>
+                      <div className="p-3 rounded-lg bg-accent text-accent-foreground hover:scale-110 transition-all duration-300">
                         <info.icon size={20} />
                       </div>
                       <div>
@@ -176,7 +182,7 @@ const Contact = () => {
                         {info.href !== "#" ? (
                           <a
                             href={info.href}
-                            className="text-muted-foreground hover:text-accent transition-smooth"
+                            className="text-muted-foreground hover:text-accent transition-all duration-300 hover:scale-105"
                           >
                             {info.value}
                           </a>
@@ -191,15 +197,15 @@ const Contact = () => {
 
               {/* Social Links */}
               <div>
-                <h3 className="text-xl font-semibold mb-6">Follow Me</h3>
+                <h3 className="text-xl font-semibold mb-6 reveal-text delay-5">Follow Me</h3>
                 <div className="flex gap-4">
-                  {socialLinks.map((social) => (
+                  {socialLinks.map((social, index) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-lg bg-card hover:bg-accent hover:text-accent-foreground transition-smooth shadow-soft hover:shadow-medium hover:-translate-y-1 ${social.color}`}
+                      className={`p-3 rounded-lg bg-card hover:bg-accent hover:text-accent-foreground transition-all duration-300 shadow-soft hover:shadow-medium hover:-translate-y-2 hover:scale-110 reveal-text delay-${5 + index} ${social.color}`}
                       aria-label={social.label}
                     >
                       <social.icon size={20} />
@@ -209,12 +215,12 @@ const Contact = () => {
               </div>
 
               {/* Call to Action */}
-              <Card className="p-6 bg-accent text-accent-foreground">
-                <h4 className="text-lg font-semibold mb-2">Open to Opportunities</h4>
-                <p className="mb-4 opacity-90">
+              <Card className="p-6 bg-accent text-accent-foreground scale-in hover:scale-105 transition-all duration-300">
+                <h4 className="text-lg font-semibold mb-2 reveal-text">Open to Opportunities</h4>
+                <p className="mb-4 opacity-90 reveal-text delay-1">
                   I'm always interested in discussing new projects, creative ideas, or opportunities to be part of your visions.
                 </p>
-                <Button variant="secondary" size="sm">
+                <Button variant="secondary" size="sm" className="hover:scale-105 transition-all duration-300">
                   Download Resume
                 </Button>
               </Card>
