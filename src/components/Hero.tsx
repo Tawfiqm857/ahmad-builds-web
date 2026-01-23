@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import ahmadProfessional from "@/assets/ahmad-professional.png";
+import ahmadOutdoor from "@/assets/ahmad-outdoor.jpg";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -105,7 +104,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-l from-secondary/30 to-accent/30 rounded-2xl blur-2xl transform -rotate-3 scale-105" />
                 <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-strong hover:shadow-colored transition-all duration-500 hover:scale-105 relative border-4 border-white/20 backdrop-blur-sm">
                   <img
-                    src={ahmadProfessional}
+                    src={ahmadOutdoor}
                     alt="Ahmad Tawfiq Muhammad - Frontend Developer"
                     className="w-full h-full object-cover hover:scale-110 transition-all duration-700"
                   />
