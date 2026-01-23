@@ -5,13 +5,22 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "Joe Express Tech Hub",
+      description: "The official website for Joe Express Tech Hub - a technology community platform featuring programs, events, and resources for tech enthusiasts. Built with modern web technologies and optimized for performance.",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      technologies: ["React", "JavaScript", "CSS3", "Responsive Design"],
+      githubUrl: "https://github.com/devByTawfiq",
+      liveUrl: "https://www.joexpresstechhub.com",
+      featured: true
+    },
+    {
       title: "Community Learning Platform",
       description: "A responsive web platform designed for the Joe Express Tech Hub community, featuring course management, student progress tracking, and interactive learning modules. Built with user-centered design principles.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
       technologies: ["React", "JavaScript", "CSS3", "Local Storage"],
-      githubUrl: "https://github.com/ahmadtawfiq/community-platform",
+      githubUrl: "https://github.com/devByTawfiq/community-platform",
       liveUrl: "https://community-platform-demo.netlify.app",
-      featured: true
+      featured: false
     },
     {
       title: "Nigerian Developer Portfolio",
