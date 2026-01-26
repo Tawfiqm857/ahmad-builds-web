@@ -14,113 +14,93 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Community Learning Platform",
-      description: "A responsive web platform designed for the Joe Express Tech Hub community, featuring course management, student progress tracking, and interactive learning modules. Built with user-centered design principles.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["React", "JavaScript", "CSS3", "Local Storage"],
-      githubUrl: "https://github.com/devByTawfiq/community-platform",
-      liveUrl: "https://community-platform-demo.netlify.app",
-      featured: false
-    },
-    {
-      title: "Nigerian Developer Portfolio",
-      description: "A responsive portfolio template specifically designed for Nigerian developers, featuring cultural elements and optimized for local internet conditions. Includes multiple themes and easy customization.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1415&q=80",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-      githubUrl: "https://github.com/ahmadtawfiq/ng-dev-portfolio",
-      liveUrl: "https://ng-dev-portfolio.netlify.app",
+      title: "Test Tutor Spark",
+      description: "An interactive educational platform designed to help students prepare for tests and exams. Features personalized learning paths, practice questions, and progress tracking to optimize study sessions.",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+      githubUrl: "https://github.com/devByTawfiq",
+      liveUrl: "https://test-tutor-spark.vercel.app",
       featured: true
-    },
-    {
-      title: "Workshop Management System",
-      description: "A comprehensive system for managing tech workshops and training sessions. Features include participant registration, session scheduling, resource sharing, and progress tracking for facilitators.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["React", "Node.js", "CSS3", "Git"],
-      githubUrl: "https://github.com/ahmadtawfiq/workshop-system",
-      liveUrl: "https://workshop-system-demo.netlify.app",
-      featured: false
-    },
-    {
-      title: "Local Business Directory",
-      description: "A directory web application for local businesses in Abuja, designed with accessibility and mobile-first approach. Helps connect community members with local services and entrepreneurs.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["JavaScript", "HTML5", "CSS3", "Responsive Design"],
-      githubUrl: "https://github.com/ahmadtawfiq/business-directory",
-      liveUrl: "https://abuja-business-directory.netlify.app",
-      featured: false
-    },
-    {
-      title: "Student Progress Tracker",
-      description: "An intuitive dashboard for tracking student progress in coding bootcamps. Features milestone tracking, skill assessments, and visual progress reports that help both students and instructors.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["React", "JavaScript", "CSS3", "Charts.js"],
-      githubUrl: "https://github.com/ahmadtawfiq/progress-tracker",
-      liveUrl: "https://student-progress-tracker.netlify.app",
-      featured: false
-    },
-    {
-      title: "Code Mentorship Portal",
-      description: "A platform connecting experienced developers with beginners for mentorship. Includes scheduling, resource sharing, and progress tracking features designed to strengthen the tech community.",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      technologies: ["React", "Node.js", "CSS3", "Real-time Chat"],
-      githubUrl: "https://github.com/ahmadtawfiq/mentorship-portal",
-      liveUrl: "https://code-mentorship-portal.netlify.app",
-      featured: false
     }
   ];
 
   return (
-    <section id="projects" className="py-20 section-projects">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4 reveal-text">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal-text">
+              <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+                Featured Projects
+              </span>
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal-text delay-1">
               A showcase of my work in frontend development and community-focused applications
             </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card 
                 key={project.title} 
-                className={`overflow-hidden hover-lift group reveal-text delay-${Math.min(index + 2, 6)} bg-gradient-to-br from-card to-accent/5 border-0 shadow-colored hover:shadow-strong ${
-                  project.featured ? 'md:col-span-2 lg:col-span-2 bg-gradient-to-br from-card to-primary/10' : ''
+                className={`overflow-hidden group reveal-text bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+                  project.featured ? 'ring-1 ring-primary/10' : ''
                 }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Project Image */}
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+                  
+                  {/* Hover overlay with quick links */}
+                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-background/20 hover:bg-background/40 transition-all duration-300 hover:scale-110"
+                    >
+                      <Github size={24} className="text-white" />
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-background/20 hover:bg-background/40 transition-all duration-300 hover:scale-110"
+                    >
+                      <ExternalLink size={24} className="text-white" />
+                    </a>
+                  </div>
                 </div>
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-accent transition-smooth">
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIndex) => (
+                    {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className={`px-3 py-1 text-white text-sm rounded-full shadow-soft ${
-                          techIndex % 4 === 0 ? 'bg-gradient-to-r from-primary to-primary-light' :
-                          techIndex % 4 === 1 ? 'bg-gradient-to-r from-secondary to-accent' :
-                          techIndex % 4 === 2 ? 'bg-gradient-to-r from-accent to-success' :
-                          'bg-gradient-to-r from-success to-warning'
-                        }`}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
                       >
                         {tech}
                       </span>
@@ -133,7 +113,7 @@ const Projects = () => {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="flex-1 border-accent text-accent hover:bg-accent hover:text-white shadow-soft hover:shadow-colored"
+                      className="flex-1 border-border hover:border-primary hover:bg-primary/5 transition-all duration-300"
                     >
                       <a
                         href={project.githubUrl}
@@ -149,7 +129,7 @@ const Projects = () => {
                     <Button
                       size="sm"
                       asChild
-                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary shadow-soft hover:shadow-medium"
+                      className="flex-1 bg-primary hover:bg-primary-light transition-all duration-300"
                     >
                       <a
                         href={project.liveUrl}
@@ -169,9 +149,14 @@ const Projects = () => {
 
           {/* View More */}
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              asChild
+              className="border-primary/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
+            >
               <a
-                href="https://github.com/ahmadtawfiq"
+                href="https://github.com/devByTawfiq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
