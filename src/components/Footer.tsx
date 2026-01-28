@@ -80,10 +80,16 @@ const Footer = () => {
               <div className="space-y-2 text-primary-foreground/80">
                 <p>Abuja, Nigeria</p>
                 <a
-                  href="mailto:ahmad.tawfiq@example.com"
+                  href="mailto:tawfiqm857@gmail.com"
                   className="block hover:text-primary-foreground transition-smooth"
                 >
-                  ahmad.tawfiq@example.com
+                  tawfiqm857@gmail.com
+                </a>
+                <a
+                  href="https://wa.me/2349066514138"
+                  className="block hover:text-primary-foreground transition-smooth"
+                >
+                  +234 906 651 4138
                 </a>
                 <p className="text-sm">
                   Available for freelance projects and full-time opportunities
