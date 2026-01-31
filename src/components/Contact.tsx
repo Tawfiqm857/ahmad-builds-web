@@ -230,9 +230,11 @@ const Contact = () => {
                   <p className="mb-4 opacity-90">
                     I'm always interested in discussing new projects, creative ideas, or opportunities to be part of your visions.
                   </p>
-                  <Button variant="secondary" size="sm" className="bg-white text-primary hover:bg-white/90 transition-all duration-300">
-                    Download Resume
-                  </Button>
+                  <a href="/Ahmad_Tawfiq_Muhammad_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <Button variant="secondary" size="sm" className="bg-white text-primary hover:bg-white/90 transition-all duration-300">
+                      Download Resume
+                    </Button>
+                  </a>
                 </Card>
               </div>
             </ScrollAnimation>
