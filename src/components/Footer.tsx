@@ -16,8 +16,8 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-bold mb-4">Ahmad Tawfiq Muhammad</h3>
               <p className="text-primary-foreground/80 mb-4">
-                Frontend Developer & Tech Community Facilitator based in Abuja, Nigeria. 
-                Passionate about creating meaningful digital experiences.
+                Shareholder & Software Engineer based in Abuja, Nigeria. 
+                Passionate about creating meaningful digital experiences and business solutions.
               </p>
               <div className="flex gap-4">
                 <a
@@ -39,7 +39,7 @@ const Footer = () => {
                   <Linkedin size={18} />
                 </a>
                 <a
-                  href="mailto:ahmad.tawfiq@example.com"
+                  href="mailto:tawfiqm857@gmail.com"
                   className="p-2 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-smooth"
                   aria-label="Email"
                 >
