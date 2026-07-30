@@ -15,7 +15,7 @@ const LinkedInBadge = () => {
         <div>
           <h4 className="text-lg font-semibold mb-1">Ahmad Tawfiq Muhammad</h4>
           <p className="text-sm text-muted-foreground mb-2">
-            Frontend Developer | Tech Community Facilitator
+            Shareholder & Software Engineer | Frontend Developer
           </p>
           <p className="text-xs text-muted-foreground">
             Abuja, Nigeria
