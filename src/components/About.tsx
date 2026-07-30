@@ -1,14 +1,13 @@
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Heart, Users, Code } from "lucide-react";
+import { GraduationCap, Heart, Users, Code, Rocket, Lightbulb } from "lucide-react";
 import ahmadCasual from "@/assets/ahmad-casual.jpg";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 import LinkedInBadge from "./LinkedInBadge";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
-      {/* Subtle pattern */}
-      <div className="absolute inset-0 pattern-dots opacity-30" />
+    <section id="about" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 pattern-dots opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -22,7 +21,7 @@ const About = () => {
             </div>
           </ScrollAnimation>
 
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+          <div className="grid lg:grid-cols-3 gap-12 items-start">
             {/* Main Bio */}
             <ScrollAnimation animation="fade-right" className="lg:col-span-2 space-y-6">
               <h3 className="text-2xl font-semibold mb-4">My Story</h3>
@@ -32,18 +31,18 @@ const About = () => {
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Currently based in <strong className="text-foreground">Abuja, Nigeria</strong>, I serve as a <strong className="text-foreground">Software Development Facilitator</strong> at Joe Express Tech Hub in Gwagwalada, where I mentor and train the next generation of developers. My passion lies in making technology accessible and impactful for communities across Nigeria.
+                Currently based in <strong className="text-foreground">Abuja, Nigeria</strong>, I serve as a <strong className="text-foreground">Shareholder & Software Engineer</strong> at <strong className="text-foreground">STYAM Integrated Services Limited</strong>, where I lead software and IT projects that solve real problems for businesses and institutions. Previously, I mentored and trained the next generation of developers at Joe Express Tech Hub.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                I believe that the best technology solutions come from understanding people first. My social science background helps me create user-centered applications that truly serve their intended purpose.
+                I believe that the best technology solutions come from understanding people first. My social science background helps me create user-centered applications that truly serve their intended purpose, while my engineering experience ensures they are built to scale.
               </p>
             </ScrollAnimation>
 
             {/* Profile Image & LinkedIn */}
-            <ScrollAnimation animation="fade-left" className="space-y-6">
+            <ScrollAnimation animation="fade-left" className="space-y-6 lg:sticky lg:top-24">
               <div className="relative group">
-                <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-xl mx-auto border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-500">
+                <div className="w-64 h-80 rounded-2xl overflow-hidden shadow-xl mx-auto border border-border/60 group-hover:border-primary/30 transition-all duration-500">
                   <img
                     src={ahmadCasual}
                     alt="Ahmad Tawfiq Muhammad"
@@ -59,13 +58,13 @@ const About = () => {
           </div>
 
           {/* Highlights Grid */}
-          <div className="mt-16">
+          <div className="mt-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: GraduationCap, title: "Education", desc: "BSc Sociology & Anthropology" },
                 { icon: Code, title: "Focus", desc: "Frontend Development" },
-                { icon: Users, title: "Community", desc: "Tech Facilitator" },
-                { icon: Heart, title: "Mission", desc: "Accessible Tech" },
+                { icon: Rocket, title: "Role", desc: "Shareholder & Software Engineer" },
+                { icon: Lightbulb, title: "Approach", desc: "Human-Centered Design" },
               ].map((item, index) => (
                 <ScrollAnimation key={item.title} animation="scale" delay={index * 100}>
                   <Card className="p-6 hover-lift border border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm group">
@@ -84,7 +83,7 @@ const About = () => {
 
           {/* Quote */}
           <ScrollAnimation animation="fade-up" delay={200}>
-            <div className="mt-16 text-center">
+            <div className="mt-20 text-center">
               <blockquote className="text-xl md:text-2xl font-medium text-muted-foreground italic max-w-3xl mx-auto border-l-4 border-primary pl-6 text-left">
                 "Technology should serve humanity, not the other way around. My goal is to bridge the gap between complex technical solutions and real human needs."
               </blockquote>

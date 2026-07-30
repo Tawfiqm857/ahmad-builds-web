@@ -1,34 +1,51 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
   const projects = [
     {
+      title: "STYAM Connect",
+      description: "Official multi-service platform for STYAM Integrated Services Limited. Connects clients with web and software development, IT services, event planning, and retail/custom orders across Nigeria.",
+      image: "/styam-connect.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+      githubUrl: "https://github.com/devByTawfiq",
+      liveUrl: "https://www.styamconnect.app",
+      featured: true
+    },
+    {
+      title: "Akco EKano",
+      description: "A modern academic records system for Aminu Kano College of Education. Covers course registration, CA and exam score entry, multi-stage result approval, CGPA analytics, and transcript management.",
+      image: "/akco-ekano.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Supabase"],
+      githubUrl: "https://github.com/devByTawfiq",
+      liveUrl: "https://www.akcoekano.com",
+      featured: true
+    },
+    {
       title: "Joe Express Tech Hub",
-      description: "The official website for Joe Express Tech Hub - a technology community platform featuring programs, events, and resources for tech enthusiasts. Built with modern web technologies and optimized for performance.",
+      description: "The official website for Joe Express Tech Hub - a technology community platform featuring programs, events, and resources for tech enthusiasts.",
       image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
       technologies: ["React", "JavaScript", "CSS3", "Responsive Design"],
       githubUrl: "https://github.com/devByTawfiq",
       liveUrl: "https://www.joexpresstechhub.com",
-      featured: true
+      featured: false
     },
     {
       title: "Test Tutor Spark",
-      description: "An interactive educational platform designed to help students prepare for tests and exams. Features personalized learning paths, practice questions, and progress tracking to optimize study sessions.",
+      description: "An interactive educational platform designed to help students prepare for tests and exams. Features personalized learning paths, practice questions, and progress tracking.",
       image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
       githubUrl: "https://github.com/devByTawfiq",
       liveUrl: "https://test-tutor-spark.vercel.app",
-      featured: true
+      featured: false
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 pattern-diagonal opacity-30" />
+    <section id="projects" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 pattern-diagonal opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -39,7 +56,7 @@ const Projects = () => {
                 Featured Projects
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                A showcase of my work in frontend development and community-focused applications
+                A showcase of my work in frontend development, product design, and systems for businesses and institutions
               </p>
             </div>
           </ScrollAnimation>
@@ -50,7 +67,7 @@ const Projects = () => {
               <ScrollAnimation 
                 key={project.title} 
                 animation={index % 2 === 0 ? "fade-right" : "fade-left"} 
-                delay={index * 150}
+                delay={index * 100}
               >
                 <Card 
                   className={`overflow-hidden group bg-card border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:-translate-y-2 ${
@@ -58,13 +75,14 @@ const Projects = () => {
                   }`}
                 >
                   {/* Project Image */}
-                  <div className="aspect-video overflow-hidden relative">
+                  <div className="aspect-video overflow-hidden relative bg-muted">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-80" />
                     
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
@@ -73,6 +91,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 hover:scale-110"
+                        aria-label={`${project.title} GitHub`}
                       >
                         <Github size={24} className="text-white" />
                       </a>
@@ -81,6 +100,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 hover:scale-110"
+                        aria-label={`${project.title} live demo`}
                       >
                         <ExternalLink size={24} className="text-white" />
                       </a>
@@ -89,9 +109,16 @@ const Projects = () => {
 
                   {/* Project Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-start justify-between gap-4 mb-3">
+                      <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      {project.featured && (
+                        <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 shrink-0">
+                          Featured
+                        </span>
+                      )}
+                    </div>
                     
                     <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                       {project.description}
@@ -121,7 +148,7 @@ const Projects = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2"
+                          className="flex items-center justify-center gap-2"
                         >
                           <Github size={16} />
                           Code
@@ -137,7 +164,7 @@ const Projects = () => {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2"
+                          className="flex items-center justify-center gap-2"
                         >
                           <ExternalLink size={16} />
                           Live Demo
@@ -167,6 +194,7 @@ const Projects = () => {
                 >
                   <Github size={20} />
                   View More Projects on GitHub
+                  <ArrowUpRight size={18} />
                 </a>
               </Button>
             </div>

@@ -72,26 +72,25 @@ const Contact = () => {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/devByTawfiq/",
-      color: "hover:text-gray-600"
+      color: "hover:text-primary"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://linkedin.com/in/ahmadtawfiq",
-      color: "hover:text-blue-600"
+      color: "hover:text-primary"
     },
     {
       icon: Mail,
       label: "Email",
       href: "mailto:tawfiqm857@gmail.com",
-      color: "hover:text-red-500"
+      color: "hover:text-primary"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 pattern-grid opacity-30" />
+    <section id="contact" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 pattern-grid opacity-20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -108,7 +107,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <ScrollAnimation animation="fade-right">
-              <Card className="p-8 hover:shadow-lg transition-all duration-300 bg-card border border-border/50 hover:border-primary/30">
+              <Card className="p-6 md:p-8 hover:shadow-lg transition-all duration-300 bg-card border border-border/50 hover:border-primary/30">
                 <h3 className="text-2xl font-semibold gradient-text mb-6">Send me a message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -122,7 +121,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="Your full name"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="min-h-[48px] transition-all duration-300 focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
@@ -136,7 +135,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="your.email@example.com"
                     required
-                    className="transition-all duration-300 focus:scale-105"
+                    className="min-h-[48px] transition-all duration-300 focus:ring-2 focus:ring-primary"
                   />
                 </div>
 
@@ -150,7 +149,7 @@ const Contact = () => {
                     placeholder="Tell me about your project or how we can work together..."
                     rows={6}
                     required
-                    className="transition-all duration-300 focus:scale-105 resize-none"
+                    className="transition-all duration-300 focus:ring-2 focus:ring-primary resize-none"
                   />
                 </div>
 
@@ -158,7 +157,7 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary-light shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                  className="w-full bg-primary hover:bg-primary-light shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[48px]"
                 >
                   {isSubmitting ? (
                     "Sending..."
@@ -179,19 +178,19 @@ const Contact = () => {
                 {/* Contact Details */}
                 <div>
                   <h3 className="text-2xl font-semibold gradient-text mb-6">Contact Information</h3>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {contactInfo.map((info, index) => (
                       <ScrollAnimation key={info.label} animation="fade-up" delay={index * 100}>
                         <div className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border/50 hover:border-primary/30 hover:shadow-sm transition-all duration-300">
-                          <div className="p-3 rounded-lg bg-primary text-primary-foreground">
+                          <div className="p-3 rounded-lg bg-primary text-primary-foreground shrink-0">
                             <info.icon size={20} />
                           </div>
-                          <div>
-                            <h4 className="font-medium">{info.label}</h4>
+                          <div className="min-w-0">
+                            <h4 className="font-medium text-sm">{info.label}</h4>
                             {info.href !== "#" ? (
                               <a
                                 href={info.href}
-                                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                                className="text-muted-foreground hover:text-primary transition-colors duration-300 break-words"
                               >
                                 {info.value}
                               </a>
@@ -207,15 +206,15 @@ const Contact = () => {
 
                 {/* Social Links */}
                 <div>
-                  <h3 className="text-xl font-semibold gradient-text mb-6">Follow Me</h3>
+                  <h3 className="text-xl font-semibold gradient-text mb-4">Follow Me</h3>
                   <div className="flex gap-4">
-                    {socialLinks.map((social, index) => (
+                    {socialLinks.map((social) => (
                       <a
                         key={social.label}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-lg bg-primary text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-2 hover:scale-110"
+                        className="p-3 rounded-lg bg-primary text-primary-foreground transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-2 hover:scale-110 min-w-[48px] min-h-[48px] flex items-center justify-center"
                         aria-label={social.label}
                       >
                         <social.icon size={20} />
@@ -231,7 +230,7 @@ const Contact = () => {
                     I'm always interested in discussing new projects, creative ideas, or opportunities to be part of your visions.
                   </p>
                   <a href="/Ahmad_Tawfiq_Muhammad_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
-                    <Button variant="secondary" size="sm" className="bg-white text-primary hover:bg-white/90 transition-all duration-300">
+                    <Button variant="secondary" size="sm" className="bg-white text-primary hover:bg-white/90 transition-all duration-300 min-h-[40px]">
                       Download Resume
                     </Button>
                   </a>
